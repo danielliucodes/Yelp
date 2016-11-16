@@ -1,34 +1,34 @@
-### Basic Yelp client
+# Yelp
 
-This is a headless example of how to implement an OAuth 1.0a Yelp API client. The Yelp API provides an application token that allows applications to make unauthenticated requests to their search API.
+This is the Yelp client project.
 
-### Next steps
+Time spent: 10 hours spent in total
 
-- Check out `BusinessesViewController.swift` to see how to use the `Business` model.
+Completed user stories:
 
-### Sample request
+ 
+Search Results Page
+* [x] Table rows should be dynamic height according to the content height.
+* [x] Custom cells should have the proper Auto Layout constraints.
+* [x] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does).
 
-**Basic search with query**
+Filter Page
+* [ ] The filters table should be organized into sections as in the mock: category, sort (best match, distance, highest rated), distance, deals (on/off).
+* [x] Clicking on the "Search" button should dismiss the filters page and trigger the search w/ the new filter settings.
+ 
+Notes:
 
-```
-Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
-    self.businesses = businesses
-    
-    for business in businesses {
-        print(business.name!)
-        print(business.address!)
-    }
-})
-```
+Optional features not completed as focus is on completing all required assignments to catch up.
+The following issues were faced:
+  Search Results Page
+    - Auto Layout was messed up during scrolling. The "name" label of the restaurant eventually had tiny width and large height.
+  Filter Page
+    - The categories table was not achievable using "static" cells. An error kept showing up in XCode that I needed a table view controller, which was present. As a result, I was not able to break up the filter into sections.
 
-**Advanced search with categories, sort, and deal filters**
+Walkthrough of all user stories:
 
-```
-Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
+![Video Walkthrough](VideoWalkthrough.gif)
 
-    for business in businesses {
-        print(business.name!)
-        print(business.address!)
-    }
-}
-```
+Walkthrough starts with default Thai restaurants search. Then a filter is applied for another search. Then serach bar is used for yet another search.
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
