@@ -23,11 +23,11 @@ The following issues were faced:
   
   Search Results Page
     
-    - Auto Layout was messed up during scrolling. The "name" label of the restaurant eventually had tiny width and large height.
+    -Auto Layout was messed up during scrolling. The "name" label of the restaurant eventually had tiny width and large height.
   
   Filter Page
     
-    - The categories table was not achievable using "static" cells. An error kept showing up in XCode that I needed a table view controller, which was present. As a result, I was not able to break up the filter into sections.
+    -The categories table was not achievable using "static" cells. An error kept showing up in XCode that I needed a table view controller, which was present. As a result, I was not able to break up the filter into sections.
 
 Walkthrough of all user stories:
 
